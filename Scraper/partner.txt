@@ -1,0 +1,94 @@
+ "Acer
+Alternate
+Lidl
+Digitalo
+Lenovo
+Vollversionen-kaufen
+Konsolenkost
+Otto
+Combspot
+Graves
+Notebooks-billiger
+Medion
+Cyberport
+Ebay
+Media Markt, blockiert Scraper
+Saturn , blockiert scraper
+(Amazon)
+
+Infos:
+
+Brand, name, preis, 
+
+CPU, 				Ja
+GPU, 
+Festplattenart, 		Jaein
+Festplattengröße, 		Ja
+Betriebssystem, 		Ja
+Kamera in MP,
+ Displayart,			Ja
+ Displaygröße,			Ja
+ Displayauflösung, 		Ja
+Gewicht, 			Ja
+Produktart,(Kategorie),
+ Anschlüsse, 			Ja
+Material,	
+ Akku Laufzeit, 		Ja
+Netzteil Watt Anzahl, 		Ja
+Energy effizienzklasse,
+ Maße,  			Ja
+Image (href link), 
+Arbeitsspeicher,  		Ja
+
+
+Output informations:
+{'Herstellernummer': 'NX.H0UEG.002', 
+'EAN': '4713883905596',
+ 'Betriebssystem': 'Windows 10 Home in S mode / Acer empfiehlt Windows 10 Pro für Unternehmen', 
+'Betriebssystem-Architektur': '64-bit', 
+'Prozessorkern': 'Quad-Core', 
+'Prozessor': 'Pentium® Silver',
+ 'Prozessorhersteller': 'Intel®',
+ 'Prozessormodell': 'N5000',
+ 'Prozessorgeschwindigkeit': '1,10 GHz',
+ 'Cache': '4 MB', 
+'Speicher': '4 GB',
+ 'Speicherkartenleser': 'Ja',
+ 'Speichertechnologie': 'LPDDR4', 
+'Flash-Speicherkapazität': '64 GB', 
+'Laufwerk': 'Nein', 
+'Bildschirmdiagonale': '29,5 cm (11,6 Zoll)', 
+'Display Bildschirm Technologie': 'IPS-Technologie (In-Plane-Switching)', 
+'Bildschirmtyp': 'LCD',
+ 'Bildschirmmodus': 'HD', 
+'Bildschirmauflösung': '1366 x 768', 'Hintergrundbeleuchtungstechnik': 'LED',
+ 'Touchscreen': 'Ja',
+ 'Grafik-Controller-Modell': 'UHD Graphics 605',
+ 'Hersteller Grafikcontroller': 'Intel®', 'Grafikspeicherzugriff': 'Gemeinsam genutztem', 'Grafikspeichertechnologie': 'LPDDR4', 
+'Anzahl der Lautsprecher': '2',
+ 'Lautsprecher': 'Ja', 
+'Wireless LAN': 'Ja', 
+'Wireless LAN-Standard': 'IEEE 802.11a/b/g/n/ac', 
+'Wireless LAN Hersteller': 'Intel®', 
+'Bluetooth': 'Ja', 
+'Fingerabdruckleser': 'Nein', 
+'Mikrofon': 'Ja', 
+'HDMI': 'Ja', 
+'Anzahl der USB 2.0 Anschlüsse': '1',
+ 'Anzahl der USB 3.0 Ports': '1', 
+'Gesamtanzahl USB Anschlüsse': '2',
+ 'Zeigegerät Typ': 'TouchPad',
+ 'Tastatur eingeschlossen': 'Ja',
+ 'Tastatur-Hintergrundbeleuchtung': 'Nein',
+ 'Anzahl der Zellen': '2-Zellen', 
+'Batteriekapazität': '4670 mAh', 
+'Akkulaufzeit': '10 Stunde(n)', 
+'Chemisches System': 'Lithium-Polymer (Li-Polymer)', 'Maximale Stromversorgung Wattleistung': '45 W',
+ 'Farbe': 'Schwarz', 
+'Höhe': '21,7 mm',
+ 'Höhe (vorne)': '17 mm',
+ 'Höhe (hinten)': '21,65 mm',
+ 'Breite': '291 mm',
+ 'Tiefe': '202 mm', 
+'Gewicht (ungefähre)': '1,25 kg'}
+
