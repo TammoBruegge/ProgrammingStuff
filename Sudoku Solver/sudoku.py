@@ -1,45 +1,56 @@
 import pandas as pd 
-import numpy as np 
+import numpy as np
+import pygame
+
+WIDTH = 800
+WIN = pygame.display.set_mode((WIDTH, WIDTH))
+pygame.display.set_caption("Sudoku Solver Visualization")
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GREY = (128, 128, 128)
+
+
 
 UNASSIGNED = 0
 rank = 3
-grid = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
-        [6, 0, 0, 1, 9, 5, 0, 0, 0],
-        [0, 9, 8, 0, 0, 0, 0, 6, 0],
-        [8, 0, 0, 0, 6, 0, 0, 0, 3],
-        [4, 0, 0, 8, 0, 3, 0, 0, 1],
-        [7, 0, 0, 0, 2, 0, 0, 0, 6],
-        [0, 6, 0, 0, 0, 0, 2, 8, 0],
-        [0, 0, 0, 4, 1, 9, 0, 0, 5],
-        [0, 0, 0, 0, 8, 0, 0, 7, 9]]
-#sudoku = np.matrix(grid)
+grid = [[5, 3, 0    , 0, 7, 0,     0, 0, 0],
+        [6, 0, 0,     1, 9, 5,     0, 0, 0],
+        [0, 9, 8,     0, 0, 0,     0, 6, 0],
 
-def isValid(self,row, col, number):
+        [8, 0, 0,     0, 6, 0,     0, 0, 3],
+        [4, 0, 0,     8, 0, 3,     0, 0, 1],
+        [7, 0, 0,     0, 2, 0,     0, 0, 6],
+
+        [0, 6, 0,    0, 0, 0,      2, 8, 0],
+        [0, 0, 0,    4, 1, 9,      0, 0, 5],
+        [0, 0, 0,    0, 8, 0,      0, 7, 9]]
+
+def isValid(row, col, number):
     global grid 
     global rank
-    print("Valid?")
 
     if(number != UNASSIGNED):
-        for i in range(0, rank * rank, 1):
-            if(grid[row][i] == number and i != col):
+        for i in range(0, rank * rank):
+            if(grid[row][i] == number):
                 return False
 
-        for j in range(0, rank * rank, 1):
-            if(grid[i][col] == number and i != row):
+        for j in range(0, rank * rank):
+            if(grid[i][col] == number):
                 return False
 
     #Für die Kästchen
-    r = (row  // rank) * rank #Für die Zeile
-    c = (col // rank) * rank #Für die Spalte
+    col = (col // rank) * rank #Für die Spalte
+    row = (row  // rank) * rank #Für die Zeile
 
-    for i in range(0,rank):
-        for j in range(0,rank):
-            if(grid[i+r][j+c] == number and row != i + r and col != j + c):
+    for i in range(rank):
+        for j in range(rank):
+            if(grid[i+row][j+col] == number):
                 return False
 
     return True
 
-def solveSudoku():
+def solveSudoku(win):
     global grid
     global rank
 
@@ -49,33 +60,58 @@ def solveSudoku():
                 for number in range(1, (rank * rank) + 1):
                     if isValid(row, col, number):
                         grid[row][col] = number
-                        solveSudoku()
+                        solveSudoku(win)
                         grid[row][col] = UNASSIGNED
                 return
+   # draw(win)
     print(np.matrix(grid))
     input("More?")
 
 
-
-
-def solve(self,rank):
+def draw(win):
     global grid
-    self.rank = rank
+    w = 70
+    x,y = 0,0
+
+    font = pygame.font.SysFont(None, 100)
     
-    for i in range(rank * rank):
-        for j in range(rank * rank):
-            field = grid[i][j]
 
-            if(not(isValid(i,j,field))):
-                print("Sudoku isnt valid!")
-                exit()
-    if(rank < 1):
-        print("The Rank has to be min. 2")
-        exit()
+    for row in range(9):
+        for col in range(9):
 
-    solveSudoku()
+            rect = pygame.Rect(x,y,w,w)
+            pygame.draw.rect(win,BLACK,rect)
+            rect2 = pygame.Rect(x+2, y+2, w-1, w-1)
+            pygame.draw.rect(win,WHITE,rect2)
+            
+            number = str(grid[row][col])
+            screen_text = font.render(number, True, BLACK)
+            win.blit(screen_text, rect2)
+            pygame.display.flip()
+            x = x + w
+        y = y + w 
+        x = 0
 
-solveSudoku()
-# def __main__():
-#     solveSudoku()
-#    # solve(3)
+
+
+
+
+def main(win):
+    pygame.init()
+    global grid
+    run = True
+    while(run):
+        draw(win)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+
+        solveSudoku(win)
+
+    pygame.quit()
+    
+                        
+
+
+
+main(WIN)
